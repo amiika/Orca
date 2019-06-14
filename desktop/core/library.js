@@ -37,6 +37,9 @@ import _udp from './library/_udp.js'
 import _osc from './library/_osc.js'
 import _greater from './library/_greater.js'
 import _smaller from './library/_smaller.js'
+import _relay from './library/_relay.js'
+import _relaybang from './library/_relaybang.js'
+import _fun from './library/_fun.js'
 
 export default {
   '0': _null,
@@ -84,5 +87,8 @@ export default {
   ';': _udp,
   '=': _osc,
   'ì': _greater,
-  'í': _smaller
+  'í': _smaller,
+  '-': _relay,
+  '☺': _fun,
+  '♪': _relaybang
 }

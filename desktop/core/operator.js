@@ -92,6 +92,17 @@ export default function Operator (orca, x, y, glyph = '.', passive = false) {
     this.lock()
   }
 
+  this.relay = function (x, y) {
+    if (!orca.inBounds(offset.x, offset.y)) { this.explode(); return }
+    const collider = orca.glyphAt(offset.x, offset.y)
+    if (collider !== '*' && collider !== '.') { this.explode(); return }
+    this.erase()
+    this.x += x
+    this.y += y
+    this.replace(this.glyph)
+    this.lock()
+  }
+
   this.hasNeighbor = function (g) {
     if (orca.glyphAt(this.x + 1, this.y) === g) { return true }
     if (orca.glyphAt(this.x - 1, this.y) === g) { return true }

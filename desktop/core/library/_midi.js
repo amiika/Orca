@@ -19,7 +19,7 @@ export default function OperatorMidi (orca, x, y, passive) {
     this.ports.page = {x: 8, y: 0, default: '0'}
 
     this.operation = function (force = false) {
-        if (!this.hasNeighbor('*') && force === false) { return }
+        if (!(this.hasNeighbor('*') || this.hasNeighbor('♪')) && force === false) { return }
 
         const channel = this.listen(this.ports.channel)
         if (channel === '.') { return }
